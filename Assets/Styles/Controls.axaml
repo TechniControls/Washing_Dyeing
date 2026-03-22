@@ -1,0 +1,51 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Design.PreviewWith>
+        <Border Padding="20">
+            <!-- Add Controls for Previewer Here -->
+        </Border>
+    </Design.PreviewWith>
+
+    <!-- Add Styles Here -->
+    <!-- SideBar Style -->
+    <!-- StackPanel Side Bar Style -->
+    <Style Selector="StackPanel.sideBarVertical">
+        <Setter Property="Spacing" Value="5" />
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="Orientation" Value="Vertical" />
+    </Style>
+    <!-- PathIcon Navigation Style -->
+    <Style Selector="PathIcon.pathNav">
+        <Setter Property="Margin" Value="0,0,15,0" />
+    </Style>
+    <!-- ComboBox Style -->
+    <Style Selector="ComboBox.comboSettings">
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="Width" Value="270" />
+        <Setter Property="PlaceholderText" Value="{TemplateBinding }" />
+        <Setter Property="Margin" Value="0,0,0,20" />
+    </Style>
+    <!-- Ellipse Status Style -->
+    <Style Selector="Ellipse.ellipse">
+        <Setter Property="Width" Value="14" />
+        <Setter Property="Height" Value="14" />
+        <Setter Property="Margin" Value="0,0,10,0" />
+    </Style>
+    <!-- Text Indicate Values -->
+    <Style Selector="TextBlock.indicateText">
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+    </Style>
+    <!-- Text Parameters Read -->
+    <Style Selector="TextBlock.readText">
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+    </Style>
+    <!-- Textblock Valve -->
+    <Style Selector="TextBlock.valve">
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="Margin" Value="0,0,0,10"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+    </Style>
+</Styles>

@@ -1,0 +1,527 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Barca_Dyeing_Screen.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="1170" d:DesignHeight="600"
+             x:DataType="vm:ControlViewModel"
+             x:Class="Barca_Dyeing_Screen.Views.ControlView">
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:DesignViewModel />
+    </Design.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>80,Auto</Grid.RowDefinitions>
+        <!-- Connection and Device Status -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,20,0,0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    600,400
+                </Grid.ColumnDefinitions>
+                <!-- Modbus Status -->
+                <StackPanel
+                    Grid.Column="0"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+                    <TextBlock
+                        Classes="readText"
+                        Margin="0,0,10,0"
+                        Text="Modbus Status:" />
+                    <Ellipse
+                        Classes="ellipse"
+                        Fill="Green"/>
+                    <TextBlock
+                        Classes="indicateText"
+                        Text="Connected"/>
+                </StackPanel>
+                <!-- PLC Status -->
+                <StackPanel
+                    Grid.Column="1"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+                    <TextBlock
+                        Classes="readText"
+                        Margin="0,0,10,0"
+                        Text="PLC Status:" />
+                    <Ellipse
+                        Classes="ellipse"
+                        Fill="Green"/>
+                    <TextBlock 
+                        Classes="indicateText"
+                        Text="Running"/>
+                </StackPanel>
+
+
+            </Grid>
+
+        </StackPanel>
+        <!-- Process Status -->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Margin="0,25,0,0">
+            <Grid>
+                <Grid.ColumnDefinitions>Auto,Auto,Auto</Grid.ColumnDefinitions>
+                <!-- Motor Control -->
+                <HeaderedContentControl Grid.Column="0" Header="Motor" Classes="groupBox" VerticalAlignment="Center"
+                                        Margin="0,0,20,0" Width="350">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            Auto,
+                            Auto,
+                            Auto,
+                            Auto,
+                            Auto,
+                            Auto,
+                            Auto,
+                            Auto
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" Source="../Assets/Images/electric-motor.png" Width="100"
+                               StretchDirection="Both" />
+
+                        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center"
+                                    Margin="0,10,0,10">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="125" />
+                                    <ColumnDefinition Width="125" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <!-- Status -->
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Margin="0,0,0,10"
+                                    HorizontalAlignment="Left"
+                                    Classes="readText"
+                                    Text="Status:" />
+
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Classes="indicateText"
+                                    Text="Stopped"
+                                    Foreground="Orange"
+                                    HorizontalAlignment="Right" />
+
+                                <!-- Fault Status -->
+                                <TextBlock
+                                    Grid.Column="0"
+                                    Grid.Row="1"
+                                    Classes="readText"
+                                    HorizontalAlignment="Left"
+                                    Margin="0,0,0,10"
+                                    Text="Fault:" />
+
+                                <TextBlock
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    Classes="indicateText"
+                                    Text="Healthy"
+                                    Foreground="Green"
+                                    HorizontalAlignment="Right" />
+
+                                <!-- Frequency SetPoint -->
+                                <TextBlock
+                                    Grid.Column="0"
+                                    Grid.Row="2"
+                                    Classes="readText"
+                                    Margin="0,0,0,10"
+                                    HorizontalAlignment="Left"
+                                    Text="SP Hz:" />
+
+                                <TextBlock
+                                    Grid.Column="1"
+                                    Grid.Row="2"
+                                    Classes="indicateText"
+                                    HorizontalAlignment="Right">
+                                    <Run Text="65.5" />
+                                    <Run Text="Hz" />
+                                </TextBlock>
+
+                                <!-- Current Frequency Indicator -->
+                                <TextBlock
+                                    Grid.Column="0"
+                                    Grid.Row="3"
+                                    Classes="readText"
+                                    Margin="0,0,0,10"
+                                    HorizontalAlignment="Left"
+                                    Text="PV Hz:" />
+
+                                <TextBlock
+                                    Grid.Column="1"
+                                    Grid.Row="3"
+                                    HorizontalAlignment="Right"
+                                    Classes="indicateText">
+                                    <Run Text="65.5" />
+                                    <Run Text="Hz" />
+                                </TextBlock>
+                            </Grid>
+                        </StackPanel>
+                        <!-- Frequency Value -->
+                        <TextBox
+                            Grid.Row="5"
+                            Watermark="Frequency Setpoint"
+                            HorizontalContentAlignment="Center"
+                            Height="35"
+                            Margin="0,0,0,10" />
+
+                        <!-- Button Write Frequency -->
+                        <Button
+                            Grid.Row="6"
+                            Classes="primaryButton"
+                            HorizontalAlignment="Stretch"
+                            Content="Write Frequency" />
+
+                        <!-- Control Buttons -->
+                        <StackPanel
+                            Grid.Row="7"
+                            Orientation="Horizontal"
+                            Margin="0,20,0,0"
+                            HorizontalAlignment="Center">
+                            <!-- Run Button -->
+                            <Button Classes="primaryButton"
+                                    Width="105"
+                                    Margin="0,0,10,0"
+                                    Content="Run" />
+                            <!-- Stop Button -->
+                            <Button Classes="primaryButton"
+                                    Width="105"
+                                    Margin="0,0,10,0"
+                                    Content="Stop" />
+                            <!-- Reset Button -->
+                            <Button Classes="primaryButton"
+                                    Width="103"
+                                    Content="Reset" />
+                        </StackPanel>
+                    </Grid>
+                </HeaderedContentControl>
+                <!-- Temperature Control -->
+                <HeaderedContentControl Grid.Column="1" Header="Temperature" Classes="groupBox"
+                                        VerticalAlignment="Center"
+                                        Margin="0,0,20,0" Width="350">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            Auto,
+                            Auto,
+                            Auto,
+                            Auto,
+                            Auto,
+                            Auto,
+                            Auto,
+                            Auto
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" Source="../Assets/Images/temp-sensitive.png" Width="100"
+                               StretchDirection="Both" />
+
+                        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center"
+                                    Margin="0,10,0,10">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="125" />
+                                    <ColumnDefinition Width="125" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <!-- Status -->
+
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Margin="0,0,0,10"
+                                    HorizontalAlignment="Left"
+                                    Classes="readText"
+                                    Text="Status:" />
+
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Classes="indicateText"
+                                    Text="Temperature OK"
+                                    Foreground="Green"
+                                    HorizontalAlignment="Right" />
+
+                                <!-- Fault Status -->
+                                <TextBlock
+                                    Grid.Column="0"
+                                    Grid.Row="1"
+                                    Classes="readText"
+                                    Margin="0,0,0,10"
+                                    HorizontalAlignment="Left"
+
+                                    Text="Fault:" />
+
+                                <TextBlock
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    Classes="indicateText"
+                                    Text="Sensor OK"
+                                    Foreground="Green"
+                                    HorizontalAlignment="Right" />
+
+                                <!-- Temperature SetPoint -->
+                                <TextBlock
+                                    Grid.Column="0"
+                                    Grid.Row="2"
+                                    Classes="readText"
+                                    Margin="0,0,0,10"
+                                    HorizontalAlignment="Left"
+                                    Text="SP °C:" />
+
+                                <TextBlock
+                                    Grid.Column="1"
+                                    Grid.Row="2"
+                                    Classes="indicateText"
+                                    HorizontalAlignment="Right">
+                                    <Run Text="65.5" />
+                                    <Run Text="°C" />
+                                </TextBlock>
+
+                                <!-- Current Temperature Indicator -->
+                                <TextBlock
+                                    Grid.Column="0"
+                                    Grid.Row="3"
+                                    Classes="readText"
+                                    Margin="0,0,0,10"
+                                    HorizontalAlignment="Left"
+                                    Text="PV °C:" />
+
+                                <TextBlock
+                                    Grid.Column="1"
+                                    Grid.Row="3"
+                                    HorizontalAlignment="Right"
+                                    Classes="indicateText">
+                                    <Run Text="65.5" />
+                                    <Run Text="°C" />
+                                </TextBlock>
+                            </Grid>
+                        </StackPanel>
+                        <!-- Temperature Value -->
+                        <TextBox
+                            Grid.Row="5"
+                            Watermark="Temperature Setpoint"
+                            HorizontalContentAlignment="Center"
+                            Height="35"
+                            Margin="0,0,0,10" />
+
+                        <!-- Button Write Temperature -->
+                        <Button
+                            Grid.Row="6"
+                            Classes="primaryButton"
+                            HorizontalAlignment="Stretch"
+                            Content="Set Temperature" />
+
+                        <!-- Control Buttons -->
+                        <StackPanel
+                            Grid.Row="7"
+                            Orientation="Horizontal"
+                            Margin="0,20,0,0"
+                            HorizontalAlignment="Center">
+                            <!-- Run Button -->
+                            <Button Classes="primaryButton"
+                                    Width="105"
+                                    Margin="0,0,10,0"
+                                    Content="Start" />
+                            <!-- Stop Button -->
+                            <Button Classes="primaryButton"
+                                    Width="105"
+                                    Margin="0,0,10,0"
+                                    Content="Stop" />
+                            <!-- Reset Button -->
+                            <Button Classes="primaryButton"
+                                    Width="103"
+                                    Content="Pause" />
+                        </StackPanel>
+
+                    </Grid>
+
+
+                </HeaderedContentControl>
+                <!-- Valves Control -->
+                <HeaderedContentControl
+                    Grid.Column="2"
+                    Header="Valves"
+                    Classes="groupBox"
+                    VerticalAlignment="Center"
+                    Width="350">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            Auto,
+                            Auto,
+                            Auto,
+                            Auto,
+                            Auto,
+                            Auto,
+                            Auto,
+                            Auto,
+                            Auto
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" Source="../Assets/Images/water-pipe.png" Width="100"
+                               StretchDirection="Both" />
+
+                        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center"
+                                    Margin="0,10,0,10">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    150,140
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <!-- Discharge Valves -->
+                                <!-- Valve 100 -->
+                                <TextBlock Grid.Column="0" Grid.Row="0"
+                                           Classes="valve"
+                                           Text="Filling Valve 100:"
+                                           HorizontalAlignment="Left" />
+
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Classes="indicateText"
+                                    Foreground="Green"
+                                    Text="Open"
+                                    HorizontalAlignment="Right" />
+
+                                <!-- Valve 101 -->
+                                <TextBlock Grid.Column="0" Grid.Row="1"
+                                           Classes="valve"
+                                           Text="Filling Valve 101:"
+                                           HorizontalAlignment="Left" />
+
+                                <TextBlock
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    Classes="indicateText"
+                                    Foreground="Orange"
+                                    Text="Closed"
+                                    HorizontalAlignment="Right" />
+
+                                <!-- Valve 102 -->
+                                <TextBlock Grid.Column="0" Grid.Row="2"
+                                           Classes="valve"
+                                           Text="Filling Valve 102:"
+                                           HorizontalAlignment="Left" />
+
+                                <TextBlock
+                                    Grid.Row="2"
+                                    Grid.Column="1"
+                                    Classes="indicateText"
+                                    Foreground="Orange"
+                                    Text="Closed"
+                                    HorizontalAlignment="Right" />
+
+                                <!-- Filling Valves -->
+                                <!-- Valve 103 -->
+                                <TextBlock Grid.Column="0" Grid.Row="3"
+                                           Classes="valve"
+                                           Text="Cooling Valve 103:"
+                                           HorizontalAlignment="Left" />
+
+                                <TextBlock
+                                    Grid.Row="3"
+                                    Grid.Column="1"
+                                    Classes="indicateText"
+                                    Foreground="Orange"
+                                    Text="Closed"
+                                    HorizontalAlignment="Right" />
+
+                                <!-- Valve 104 -->
+                                <TextBlock Grid.Column="0" Grid.Row="4"
+                                           Classes="valve"
+                                           Text="Cooling Valve 104:"
+                                           HorizontalAlignment="Left" />
+
+                                <TextBlock
+                                    Grid.Row="4"
+                                    Grid.Column="1"
+                                    Classes="indicateText"
+                                    Foreground="Orange"
+                                    Text="Closed"
+                                    HorizontalAlignment="Right" />
+
+                                <!-- Valve 105 -->
+                                <TextBlock Grid.Column="0" Grid.Row="5"
+                                           Classes="valve"
+                                           Text="Cooling Valve 105:"
+                                           HorizontalAlignment="Left" />
+
+                                <TextBlock
+                                    Grid.Row="5"
+                                    Grid.Column="1"
+                                    Classes="indicateText"
+                                    Foreground="Orange"
+                                    Text="Closed"
+                                    HorizontalAlignment="Right" />
+
+                                <!-- Cooling Valves -->
+                                <!-- Valve 106 -->
+                                <TextBlock Grid.Column="0" Grid.Row="6"
+                                           Classes="valve"
+                                           Text="Discharge Valve 106:"
+                                           HorizontalAlignment="Left" />
+
+                                <TextBlock
+                                    Grid.Row="6"
+                                    Grid.Column="1"
+                                    Classes="indicateText"
+                                    Foreground="Orange"
+                                    Text="Closed"
+                                    HorizontalAlignment="Right" />
+
+                                <!-- Valve 107 -->
+                                <TextBlock Grid.Column="0" Grid.Row="7"
+                                           Classes="valve"
+                                           Text="Discharge Valve 107:"
+                                           HorizontalAlignment="Left" />
+
+                                <TextBlock
+                                    Grid.Row="7"
+                                    Grid.Column="1"
+                                    Classes="indicateText"
+                                    Foreground="Orange"
+                                    Text="Closed"
+                                    HorizontalAlignment="Right" />
+
+                                <!-- Valve 108 -->
+                                <TextBlock Grid.Column="0" Grid.Row="8"
+                                           Classes="valve"
+                                           Text="Discharge Valve 108:"
+                                           HorizontalAlignment="Left" />
+
+                                <TextBlock
+                                    Grid.Row="8"
+                                    Grid.Column="1"
+                                    Classes="indicateText"
+                                    Foreground="Orange"
+                                    Text="Closed"
+                                    HorizontalAlignment="Right" />
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
+                </HeaderedContentControl>
+            </Grid>
+
+        </StackPanel>
+
+
+    </Grid>
+</UserControl>

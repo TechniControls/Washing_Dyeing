@@ -1,0 +1,19 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Barca_Dyeing_Screen.App"
+             xmlns:local="using:Barca_Dyeing_Screen"
+             RequestedThemeVariant="Default">
+    <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+
+    <Application.DataTemplates>
+        <local:ViewLocator />
+    </Application.DataTemplates>
+
+    <Application.Styles>
+        <FluentTheme />
+        <StyleInclude Source="Assets/Icons/ButtonIcons.axaml" />
+        <StyleInclude Source="Assets/Styles/Controls.axaml" />
+        <StyleInclude Source="Assets/Styles/Buttons.axaml" />
+        <StyleInclude Source="Assets/Styles/GroupBox.axaml" />
+    </Application.Styles>
+</Application>

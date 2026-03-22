@@ -1,0 +1,76 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Barca_Dyeing_Screen.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1170" d:DesignHeight="600"
+        Width="1170" Height="600"
+        CanResize="False"
+        x:Class="Barca_Dyeing_Screen.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Barca_Dyeing_Screen">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:DesignViewModel />
+    </Design.DataContext>
+
+    <Grid>
+        <SplitView
+            IsPaneOpen="{Binding OpenPane}"
+            PaneBackground="#F3F4F6"
+            OpenPaneLength="220"
+            CompactPaneLength="48"
+            DisplayMode="CompactInline">
+            <!-- Pane -->
+            <SplitView.Pane>
+                <StackPanel Classes="sideBarVertical">
+                    <Button HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Command="{Binding ToggleSplitViewPaneCommand}">
+                        <PathIcon Data="{StaticResource LinesMenu}"
+                                  Foreground="White" />
+                    </Button>
+
+                    <!-- Navigate to Connection View -->
+                    <Button Classes="nav"
+                            Command="{Binding NavigateToConnectionViewCommand}">
+                        <StackPanel Orientation="Horizontal">
+                            <PathIcon Data="{StaticResource PlugConnection}"
+                                      Classes="pathNav" />
+                            <TextBlock Text="Connection" />
+                        </StackPanel>
+                    </Button>
+                    <!-- Navigate to Connection View -->
+                    <Button Classes="nav"
+                            Command="{Binding NavigateToControlViewCommand}">
+                        <StackPanel Orientation="Horizontal">
+                            <PathIcon Data="{StaticResource Control}"
+                                      Classes="pathNav" />
+                            <TextBlock Text="Control" />
+                        </StackPanel>
+                    </Button>
+                    <!-- Navigate to Settings View -->
+                    <Button Classes="nav"
+                            Command="{Binding NavigateToControlViewCommand}">
+                        <StackPanel Orientation="Horizontal">
+                            <PathIcon Data="{StaticResource settings}"
+                                      Classes="pathNav" />
+                            <TextBlock Text="Settings" />
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <Border>
+                    <ContentControl Content="{Binding NavigationService.CurrentViewModel}"/> 
+                </Border>
+            </SplitView.Content>
+        </SplitView>
+
+    </Grid>
+
+
+</Window>

@@ -1,0 +1,75 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Barca_Dyeing_Screen.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="1170" d:DesignHeight="600"
+             x:DataType="vm:ConnectionViewModel"
+             x:Class="Barca_Dyeing_Screen.Views.ConnectionView">
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:DesignViewModel />
+    </Design.DataContext>
+
+    <Grid>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <!-- Connection Status -->
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,0,20">
+                <Ellipse Classes="ellipse"
+                         Fill="{Binding ConnectionStatusColor}" />
+                <TextBlock>
+                    <Run Text="Status" />
+                    <Run Text="{Binding ConnectionState}" />
+                </TextBlock>
+            </StackPanel>
+
+            <!-- Serial Ports-->
+            <ComboBox Classes="comboSettings"
+                      PlaceholderText="ComPort"
+                      ItemsSource="{Binding PortNames}"
+                      SelectedItem="{Binding SelectedComPort}" />
+            <!-- BaudRate -->
+            <ComboBox Classes="comboSettings"
+                      PlaceholderText="BaudRate"
+                      ItemsSource="{Binding BaudRate}"
+                      SelectedItem="{Binding SelectedBaudRate}" />
+            <!-- Parity -->
+            <ComboBox Classes="comboSettings"
+                      PlaceholderText="Parity"
+                      ItemsSource="{Binding Parity}"
+                      SelectedItem="{Binding SelectedParity}" />
+            <!-- DataBits -->
+            <ComboBox Classes="comboSettings"
+                      PlaceholderText="DataBits"
+                      ItemsSource="{Binding DataBits}"
+                      SelectedItem="{Binding SelectedDataBits}" />
+            <!-- StopBits -->
+            <ComboBox Classes="comboSettings"
+                      PlaceholderText="StopBits"
+                      ItemsSource="{Binding StopBits}"
+                      SelectedItem="{Binding SelectedStopBits}" />
+            <Button Classes="connectionButton"
+                    Width="270"
+                    Content="Update Ports"
+                    Command="{Binding UpdatePortsCommand}" />
+            <!-- Buttons -->
+            <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                <Button Classes="connectionButton"
+                        Width="130"
+                        Margin="0,0,10,0"
+                        Content="Connect"
+                        Command="{Binding ConnectSerialPortCommand}" />
+                <Button Classes="connectionButton"
+                        Width="130"
+                        Command="{Binding DisconnectSerialPortCommand}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="../Assets/Images/unlink.png" Width="20" Height="20" StretchDirection="Both"/>
+                        <TextBlock Text="Disconnect" />
+                    </StackPanel>
+
+                </Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>
