@@ -1,5 +1,6 @@
 C:\Users\stive\.nuget\packages\avalonia\11.3.12\ref\net8.0\Avalonia.Base.dll
 C:\Users\stive\.nuget\packages\avalonia.controls.colorpicker\11.3.12\lib\net8.0\Avalonia.Controls.ColorPicker.dll
+C:\Users\stive\.nuget\packages\avalonia.controls.datagrid\11.3.12\lib\net8.0\Avalonia.Controls.DataGrid.dll
 C:\Users\stive\.nuget\packages\avalonia\11.3.12\ref\net8.0\Avalonia.Controls.dll
 C:\Users\stive\.nuget\packages\avalonia\11.3.12\ref\net8.0\Avalonia.DesignerSupport.dll
 C:\Users\stive\.nuget\packages\avalonia.desktop\11.3.12\lib\net8.0\Avalonia.Desktop.dll
@@ -8,6 +9,7 @@ C:\Users\stive\.nuget\packages\avalonia\11.3.12\ref\net8.0\Avalonia.Dialogs.dll
 C:\Users\stive\.nuget\packages\avalonia\11.3.12\ref\net8.0\Avalonia.dll
 C:\Users\stive\.nuget\packages\avalonia.fonts.inter\11.3.12\lib\net8.0\Avalonia.Fonts.Inter.dll
 C:\Users\stive\.nuget\packages\avalonia.freedesktop\11.3.12\lib\net8.0\Avalonia.FreeDesktop.dll
+C:\Users\stive\.nuget\packages\avalonia.labs.gif\11.3.1\lib\net6.0\Avalonia.Labs.Gif.dll
 C:\Users\stive\.nuget\packages\avalonia\11.3.12\ref\net8.0\Avalonia.Markup.dll
 C:\Users\stive\.nuget\packages\avalonia\11.3.12\ref\net8.0\Avalonia.Markup.Xaml.dll
 C:\Users\stive\.nuget\packages\avalonia\11.3.12\ref\net8.0\Avalonia.Metal.dll

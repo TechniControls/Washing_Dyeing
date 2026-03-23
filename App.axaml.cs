@@ -1,8 +1,8 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
-using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
 using System.Linq;
+using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using Barca_Dyeing_Screen.Services;
 using Barca_Dyeing_Screen.Stores;
@@ -35,6 +35,7 @@ public partial class App : Application
         collection.AddSingleton<ConnectionViewModel>();
         collection.AddTransient<ControlViewModel>();
         collection.AddTransient<SettingsViewModel>();
+        collection.AddSingleton<AlarmsViewModel>();
         
         var serviceProvider = collection.BuildServiceProvider();
         var mainViewModel = serviceProvider.GetRequiredService<MainWindowViewModel>();

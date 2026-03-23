@@ -40,6 +40,18 @@ public partial class MainWindowViewModel : ViewModelBase
     {
         NavigationService.NavigateTo<ConnectionViewModel>();
     }
+    
+    [RelayCommand]
+    private void NavigateToSettingsView()
+    {
+        NavigationService.NavigateTo<SettingsViewModel>();
+    }
+    
+    [RelayCommand]
+    private void NavigateToAlarmsView()
+    {
+        NavigationService.NavigateTo<AlarmsViewModel>();
+    }
 
 
     // [ObservableProperty]

@@ -124,6 +124,22 @@
           }
         }
       },
+      "Avalonia.Controls.DataGrid/11.3.12": {
+        "type": "package",
+        "dependencies": {
+          "Avalonia": "11.3.12"
+        },
+        "compile": {
+          "lib/net8.0/Avalonia.Controls.DataGrid.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Avalonia.Controls.DataGrid.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Avalonia.Desktop/11.3.12": {
         "type": "package",
         "dependencies": {
@@ -191,6 +207,22 @@
         },
         "runtime": {
           "lib/net8.0/Avalonia.FreeDesktop.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Avalonia.Labs.Gif/11.3.1": {
+        "type": "package",
+        "dependencies": {
+          "Avalonia": "11.0.0"
+        },
+        "compile": {
+          "lib/net6.0/Avalonia.Labs.Gif.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Avalonia.Labs.Gif.dll": {
             "related": ".xml"
           }
         }
@@ -2025,6 +2057,25 @@
         "lib/netstandard2.0/Avalonia.Controls.ColorPicker.xml"
       ]
     },
+    "Avalonia.Controls.DataGrid/11.3.12": {
+      "sha512": "9zlVkd23gaFtJwi4n7JaKnGdCSkD1fuiRdflzfkLoVXxHKQ2pTOcsUB26rAs7uMTCRvvte8OPwbsK8otA1wNPg==",
+      "type": "package",
+      "path": "avalonia.controls.datagrid/11.3.12",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "avalonia.controls.datagrid.11.3.12.nupkg.sha512",
+        "avalonia.controls.datagrid.nuspec",
+        "lib/net6.0/Avalonia.Controls.DataGrid.dll",
+        "lib/net6.0/Avalonia.Controls.DataGrid.xml",
+        "lib/net8.0/Avalonia.Controls.DataGrid.dll",
+        "lib/net8.0/Avalonia.Controls.DataGrid.xml",
+        "lib/netstandard2.0/Avalonia.Controls.DataGrid.dll",
+        "lib/netstandard2.0/Avalonia.Controls.DataGrid.xml",
+        "readme.md"
+      ]
+    },
     "Avalonia.Desktop/11.3.12": {
       "sha512": "zwtEFNvXB60z7rHD92oISkCQq0PcFyttfAW+cgcfALECegtNkd9P9/UXIuE0GvMVBVUPTRUQeSB6/jhwZKqqRQ==",
       "type": "package",
@@ -2095,6 +2146,22 @@
         "lib/net8.0/Avalonia.FreeDesktop.xml",
         "lib/netstandard2.0/Avalonia.FreeDesktop.dll",
         "lib/netstandard2.0/Avalonia.FreeDesktop.xml"
+      ]
+    },
+    "Avalonia.Labs.Gif/11.3.1": {
+      "sha512": "RQx1O+st7eKqlizLK8EBkNcI8rb7Ome2yk6/FgVqDtKZiHO9gmdrPvkfbaaV3ROSQOaXflCe44K7vP8nfLe5rA==",
+      "type": "package",
+      "path": "avalonia.labs.gif/11.3.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "avalonia.labs.gif.11.3.1.nupkg.sha512",
+        "avalonia.labs.gif.nuspec",
+        "lib/net6.0/Avalonia.Labs.Gif.dll",
+        "lib/net6.0/Avalonia.Labs.Gif.xml",
+        "lib/netstandard2.1/Avalonia.Labs.Gif.dll",
+        "lib/netstandard2.1/Avalonia.Labs.Gif.xml"
       ]
     },
     "Avalonia.Native/11.3.12": {
@@ -3295,9 +3362,11 @@
   "projectFileDependencyGroups": {
     "net9.0": [
       "Avalonia >= 11.3.12",
+      "Avalonia.Controls.DataGrid >= 11.3.12",
       "Avalonia.Desktop >= 11.3.12",
       "Avalonia.Diagnostics >= 11.3.12",
       "Avalonia.Fonts.Inter >= 11.3.12",
+      "Avalonia.Labs.Gif >= 11.3.1",
       "Avalonia.Themes.Fluent >= 11.3.12",
       "CommunityToolkit.Mvvm >= 8.4.1",
       "Microsoft.Extensions.DependencyInjection >= 10.0.5",
@@ -3352,6 +3421,10 @@
             "target": "Package",
             "version": "[11.3.12, )"
           },
+          "Avalonia.Controls.DataGrid": {
+            "target": "Package",
+            "version": "[11.3.12, )"
+          },
           "Avalonia.Desktop": {
             "target": "Package",
             "version": "[11.3.12, )"
@@ -3363,6 +3436,10 @@
           "Avalonia.Fonts.Inter": {
             "target": "Package",
             "version": "[11.3.12, )"
+          },
+          "Avalonia.Labs.Gif": {
+            "target": "Package",
+            "version": "[11.3.1, )"
           },
           "Avalonia.Themes.Fluent": {
             "target": "Package",

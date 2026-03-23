@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "dIgKSaMBqDY=",
+  "dgSpecHash": "1BzYNbc4chI=",
   "success": true,
   "projectFilePath": "C:\\Users\\stive\\RiderProjects\\Barca_Dyeing_Screen\\Barca_Dyeing_Screen.csproj",
   "expectedPackageFiles": [
@@ -8,10 +8,12 @@
     "C:\\Users\\stive\\.nuget\\packages\\avalonia.angle.windows.natives\\2.1.25547.20250602\\avalonia.angle.windows.natives.2.1.25547.20250602.nupkg.sha512",
     "C:\\Users\\stive\\.nuget\\packages\\avalonia.buildservices\\11.3.2\\avalonia.buildservices.11.3.2.nupkg.sha512",
     "C:\\Users\\stive\\.nuget\\packages\\avalonia.controls.colorpicker\\11.3.12\\avalonia.controls.colorpicker.11.3.12.nupkg.sha512",
+    "C:\\Users\\stive\\.nuget\\packages\\avalonia.controls.datagrid\\11.3.12\\avalonia.controls.datagrid.11.3.12.nupkg.sha512",
     "C:\\Users\\stive\\.nuget\\packages\\avalonia.desktop\\11.3.12\\avalonia.desktop.11.3.12.nupkg.sha512",
     "C:\\Users\\stive\\.nuget\\packages\\avalonia.diagnostics\\11.3.12\\avalonia.diagnostics.11.3.12.nupkg.sha512",
     "C:\\Users\\stive\\.nuget\\packages\\avalonia.fonts.inter\\11.3.12\\avalonia.fonts.inter.11.3.12.nupkg.sha512",
     "C:\\Users\\stive\\.nuget\\packages\\avalonia.freedesktop\\11.3.12\\avalonia.freedesktop.11.3.12.nupkg.sha512",
+    "C:\\Users\\stive\\.nuget\\packages\\avalonia.labs.gif\\11.3.1\\avalonia.labs.gif.11.3.1.nupkg.sha512",
     "C:\\Users\\stive\\.nuget\\packages\\avalonia.native\\11.3.12\\avalonia.native.11.3.12.nupkg.sha512",
     "C:\\Users\\stive\\.nuget\\packages\\avalonia.remote.protocol\\11.3.12\\avalonia.remote.protocol.11.3.12.nupkg.sha512",
     "C:\\Users\\stive\\.nuget\\packages\\avalonia.skia\\11.3.12\\avalonia.skia.11.3.12.nupkg.sha512",

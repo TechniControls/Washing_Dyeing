@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Barca_Dyeing_Screen")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+efeb96ed07f9030d4c0abebdf93f0231bb1167f7")]
 [assembly: System.Reflection.AssemblyProductAttribute("Barca_Dyeing_Screen")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Barca_Dyeing_Screen")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

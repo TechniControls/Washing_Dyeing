@@ -1,0 +1,25 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:dg="clr-namespace:Avalonia.Controls;assembly=Avalonia.Controls.DataGrid"
+             xmlns:vm="clr-namespace:Barca_Dyeing_Screen.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="1170" d:DesignHeight="600"
+             Width="1170" Height="600"
+             x:DataType="vm:AlarmsViewModel"
+             x:Class="Barca_Dyeing_Screen.Views.AlarmsView">
+    <Design.DataContext>
+        <vm:DesignViewModel />
+    </Design.DataContext>
+    <Grid>
+        <dg:DataGrid AutoGenerateColumns="True"
+                     GridLinesVisibility="All"
+                     IsReadOnly="True"
+                     Margin="20"
+                     BorderThickness="1"
+                     BorderBrush="Gray"
+                     ItemsSource="{Binding AlarmsCollection}" />
+    </Grid>
+    
+
+</UserControl>

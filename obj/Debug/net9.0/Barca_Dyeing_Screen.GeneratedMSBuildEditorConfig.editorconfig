@@ -40,6 +40,9 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [C:/Users/stive/RiderProjects/Barca_Dyeing_Screen/Assets/Styles/GroupBox.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[C:/Users/stive/RiderProjects/Barca_Dyeing_Screen/Views/AlarmsView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [C:/Users/stive/RiderProjects/Barca_Dyeing_Screen/Views/ConnectionView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 

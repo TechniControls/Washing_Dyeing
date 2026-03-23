@@ -3,6 +3,7 @@
         xmlns:vm="using:Barca_Dyeing_Screen.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:gif="clr-namespace:Avalonia.Labs.Gif;assembly=Avalonia.Labs.Gif"
         mc:Ignorable="d" d:DesignWidth="1170" d:DesignHeight="600"
         Width="1170" Height="600"
         CanResize="False"
@@ -13,7 +14,7 @@
 
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+                                                                    to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <vm:DesignViewModel />
     </Design.DataContext>
 
@@ -54,18 +55,27 @@
                     </Button>
                     <!-- Navigate to Settings View -->
                     <Button Classes="nav"
-                            Command="{Binding NavigateToControlViewCommand}">
+                            Command="{Binding NavigateToSettingsViewCommand}">
                         <StackPanel Orientation="Horizontal">
                             <PathIcon Data="{StaticResource settings}"
                                       Classes="pathNav" />
                             <TextBlock Text="Settings" />
                         </StackPanel>
                     </Button>
+                    <!-- Navigate to Alarms View -->
+                    <Button Classes="nav"
+                            IsVisible="True"
+                            Command="{Binding NavigateToAlarmsViewCommand}">
+                        <StackPanel Orientation="Horizontal" Spacing="9">
+                            <gif:GifImage  Source="avares://Barca_Dyeing_Screen/Assets/Images/alarm.gif" Width="25" Height="25"/>
+                            <TextBlock Text="Alarms" />
+                        </StackPanel>
+                    </Button>
                 </StackPanel>
             </SplitView.Pane>
             <SplitView.Content>
                 <Border>
-                    <ContentControl Content="{Binding NavigationService.CurrentViewModel}"/> 
+                    <ContentControl Content="{Binding NavigationService.CurrentViewModel}" />
                 </Border>
             </SplitView.Content>
         </SplitView>

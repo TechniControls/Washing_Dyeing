@@ -13,17 +13,56 @@
     </Design.DataContext>
 
     <Grid>
-        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <!-- Connection Status -->
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,0,20">
-                <Ellipse Classes="ellipse"
-                         Fill="{Binding ConnectionStatusColor}" />
-                <TextBlock>
-                    <Run Text="Status" />
-                    <Run Text="{Binding ConnectionState}" />
-                </TextBlock>
-            </StackPanel>
-
+        <Grid.RowDefinitions>80,Auto</Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,20,0,0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    600,400
+                </Grid.ColumnDefinitions>
+                <!-- Modbus Status -->
+                <StackPanel
+                    Grid.Column="0"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+                    <TextBlock
+                        Classes="readText"
+                        Margin="0,0,10,0"
+                        Text="Modbus Status:" />
+                    <Ellipse
+                        Classes="ellipse"
+                        Fill="Green"/>
+                    <TextBlock
+                        Classes="indicateText"
+                        Text="Connected"/>
+                </StackPanel>
+                <!-- PLC Status -->
+                <StackPanel
+                    Grid.Column="1"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+                    <TextBlock
+                        Classes="readText"
+                        Margin="0,0,10,0"
+                        Text="PLC Status:" />
+                    <Ellipse
+                        Classes="ellipse"
+                        Fill="Green"/>
+                    <TextBlock 
+                        Classes="indicateText"
+                        Text="Running"/>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+        
+        <!-- Connection Parameters -->
+        <StackPanel 
+            Grid.Row="1"
+            Orientation="Vertical"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Margin="0,50,0,0">
             <!-- Serial Ports-->
             <ComboBox Classes="comboSettings"
                       PlaceholderText="ComPort"
@@ -62,13 +101,8 @@
                         Command="{Binding ConnectSerialPortCommand}" />
                 <Button Classes="connectionButton"
                         Width="130"
-                        Command="{Binding DisconnectSerialPortCommand}">
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="../Assets/Images/unlink.png" Width="20" Height="20" StretchDirection="Both"/>
-                        <TextBlock Text="Disconnect" />
-                    </StackPanel>
-
-                </Button>
+                        Content="Disconnect"
+                        Command="{Binding DisconnectSerialPortCommand}"/>
             </StackPanel>
         </StackPanel>
     </Grid>

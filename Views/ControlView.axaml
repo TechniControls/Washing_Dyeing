@@ -31,10 +31,10 @@
                         Text="Modbus Status:" />
                     <Ellipse
                         Classes="ellipse"
-                        Fill="Green"/>
+                        Fill="Green" />
                     <TextBlock
                         Classes="indicateText"
-                        Text="Connected"/>
+                        Text="Connected" />
                 </StackPanel>
                 <!-- PLC Status -->
                 <StackPanel
@@ -48,15 +48,12 @@
                         Text="PLC Status:" />
                     <Ellipse
                         Classes="ellipse"
-                        Fill="Green"/>
-                    <TextBlock 
+                        Fill="Green" />
+                    <TextBlock
                         Classes="indicateText"
-                        Text="Running"/>
+                        Text="Running" />
                 </StackPanel>
-
-
             </Grid>
-
         </StackPanel>
         <!-- Process Status -->
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center"

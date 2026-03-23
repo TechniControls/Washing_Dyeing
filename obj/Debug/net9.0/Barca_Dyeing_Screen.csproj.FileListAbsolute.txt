@@ -94,3 +94,6 @@ C:\Users\stive\RiderProjects\Barca_Dyeing_Screen\obj\Debug\net9.0\refint\Barca_D
 C:\Users\stive\RiderProjects\Barca_Dyeing_Screen\obj\Debug\net9.0\Barca_Dyeing_Screen.pdb
 C:\Users\stive\RiderProjects\Barca_Dyeing_Screen\obj\Debug\net9.0\Barca_Dyeing_Screen.genruntimeconfig.cache
 C:\Users\stive\RiderProjects\Barca_Dyeing_Screen\obj\Debug\net9.0\ref\Barca_Dyeing_Screen.dll
+C:\Users\stive\RiderProjects\Barca_Dyeing_Screen\obj\Debug\net9.0\Barca_Dyeing_Screen.sourcelink.json
+C:\Users\stive\RiderProjects\Barca_Dyeing_Screen\bin\Debug\net9.0\Avalonia.Labs.Gif.dll
+C:\Users\stive\RiderProjects\Barca_Dyeing_Screen\bin\Debug\net9.0\Avalonia.Controls.DataGrid.dll

@@ -8,6 +8,7 @@
         <entry key="Assets/Styles/Buttons.axaml" value="Barca_Dyeing_Screen.csproj" />
         <entry key="Assets/Styles/Controls.axaml" value="Barca_Dyeing_Screen.csproj" />
         <entry key="Assets/Styles/GroupBox.axaml" value="Barca_Dyeing_Screen.csproj" />
+        <entry key="Views/AlarmsView.axaml" value="Barca_Dyeing_Screen.csproj" />
         <entry key="Views/ConnectionView.axaml" value="Barca_Dyeing_Screen.csproj" />
         <entry key="Views/ControlView.axaml" value="Barca_Dyeing_Screen.csproj" />
         <entry key="Views/MainWindow.axaml" value="Barca_Dyeing_Screen.csproj" />

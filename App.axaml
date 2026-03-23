@@ -15,5 +15,6 @@
         <StyleInclude Source="Assets/Styles/Controls.axaml" />
         <StyleInclude Source="Assets/Styles/Buttons.axaml" />
         <StyleInclude Source="Assets/Styles/GroupBox.axaml" />
+        <StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml" />
     </Application.Styles>
 </Application>
