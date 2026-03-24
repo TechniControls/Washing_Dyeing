@@ -25,6 +25,8 @@ public partial class App : Application
         
         // Services
         collection.AddSingleton<ConnectionService>();
+        collection.AddSingleton<PlcService>();
+        collection.AddSingleton<AlarmService>();
         collection.AddSingleton<INavigationService, NavigationService>();
         
         // Stores

@@ -22,6 +22,7 @@
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="Width" Value="{TemplateBinding}"/>
         <Setter Property="Margin" Value="{TemplateBinding}"/>
+        <Setter Property="Cursor" Value="Hand"/>
     </Style>
     <!-- Connect and Disconnect Button -->
     <Style Selector="Button.primaryButton">

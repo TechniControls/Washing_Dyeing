@@ -16,6 +16,7 @@
                      GridLinesVisibility="All"
                      IsReadOnly="True"
                      Margin="20"
+                     Width="1100"
                      BorderThickness="1"
                      BorderBrush="Gray"
                      ItemsSource="{Binding AlarmsCollection}" />

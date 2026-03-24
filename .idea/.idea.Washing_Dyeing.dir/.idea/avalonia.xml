@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="App.axaml" value="Barca_Dyeing_Screen.csproj" />
+        <entry key="Assets/Icons/ButtonIcons.axaml" value="Barca_Dyeing_Screen.csproj" />
+        <entry key="Assets/Styles/Buttons.axaml" value="Barca_Dyeing_Screen.csproj" />
+        <entry key="Assets/Styles/Controls.axaml" value="Barca_Dyeing_Screen.csproj" />
+        <entry key="Views/AlarmsView.axaml" value="Barca_Dyeing_Screen.csproj" />
+        <entry key="Views/ConnectionView.axaml" value="Barca_Dyeing_Screen.csproj" />
+        <entry key="Views/ControlView.axaml" value="Barca_Dyeing_Screen.csproj" />
+        <entry key="Views/MainWindow.axaml" value="Barca_Dyeing_Screen.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

@@ -373,6 +373,22 @@
           "buildTransitive/CommunityToolkit.Mvvm.targets": {}
         }
       },
+      "DialogHost.Avalonia/0.8.1": {
+        "type": "package",
+        "dependencies": {
+          "Avalonia": "11.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/DialogHost.Avalonia.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/DialogHost.Avalonia.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "HarfBuzzSharp/8.3.1.1": {
         "type": "package",
         "dependencies": {
@@ -494,6 +510,19 @@
             "assetType": "native",
             "rid": "win-x86"
           }
+        }
+      },
+      "MessageBox.Avalonia/3.3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Avalonia": "11.1.5",
+          "DialogHost.Avalonia": "0.8.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/MsBox.Avalonia.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MsBox.Avalonia.dll": {}
         }
       },
       "MicroCom.Runtime/0.11.0": {
@@ -2337,6 +2366,21 @@
         "lib/netstandard2.1/CommunityToolkit.Mvvm.xml"
       ]
     },
+    "DialogHost.Avalonia/0.8.1": {
+      "sha512": "RLBOMqjJPgSmwe0i1pzX3Q7Pn0i4xE/E1b774krd4VyEkaorz1AYMdYQHyIfuhtQv5NntZyS0MuQbxJl/PhzBg==",
+      "type": "package",
+      "path": "dialoghost.avalonia/0.8.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "dialoghost.avalonia.0.8.1.nupkg.sha512",
+        "dialoghost.avalonia.nuspec",
+        "icon.png",
+        "lib/netstandard2.0/DialogHost.Avalonia.dll",
+        "lib/netstandard2.0/DialogHost.Avalonia.xml"
+      ]
+    },
     "HarfBuzzSharp/8.3.1.1": {
       "sha512": "tLZN66oe/uiRPTZfrCU4i8ScVGwqHNh5MHrXj0yVf4l7Mz0FhTGnQ71RGySROTmdognAs0JtluHkL41pIabWuQ==",
       "type": "package",
@@ -2493,6 +2537,19 @@
         "runtimes/win-arm64/native/libHarfBuzzSharp.dll",
         "runtimes/win-x64/native/libHarfBuzzSharp.dll",
         "runtimes/win-x86/native/libHarfBuzzSharp.dll"
+      ]
+    },
+    "MessageBox.Avalonia/3.3.1.1": {
+      "sha512": "a0NocLvE0ipg0REevrMtilNI+ud+tFTJW7YrPtploeM93ew8S3Y6hEybqZ7W9q5Yqa9u+xOrOjAlG1lTihWhnQ==",
+      "type": "package",
+      "path": "messagebox.avalonia/3.3.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.jpg",
+        "lib/netstandard2.0/MsBox.Avalonia.dll",
+        "messagebox.avalonia.3.3.1.1.nupkg.sha512",
+        "messagebox.avalonia.nuspec"
       ]
     },
     "MicroCom.Runtime/0.11.0": {
@@ -3369,6 +3426,7 @@
       "Avalonia.Labs.Gif >= 11.3.1",
       "Avalonia.Themes.Fluent >= 11.3.12",
       "CommunityToolkit.Mvvm >= 8.4.1",
+      "MessageBox.Avalonia >= 3.3.1.1",
       "Microsoft.Extensions.DependencyInjection >= 10.0.5",
       "NModbus4.NetCore >= 4.0.0",
       "System.IO.Ports >= 10.0.5"
@@ -3380,11 +3438,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\stive\\RiderProjects\\Barca_Dyeing_Screen\\Barca_Dyeing_Screen.csproj",
+      "projectUniqueName": "C:\\Users\\stive\\RiderProjects\\Washing_Dyeing\\Barca_Dyeing_Screen.csproj",
       "projectName": "Barca_Dyeing_Screen",
-      "projectPath": "C:\\Users\\stive\\RiderProjects\\Barca_Dyeing_Screen\\Barca_Dyeing_Screen.csproj",
+      "projectPath": "C:\\Users\\stive\\RiderProjects\\Washing_Dyeing\\Barca_Dyeing_Screen.csproj",
       "packagesPath": "C:\\Users\\stive\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\stive\\RiderProjects\\Barca_Dyeing_Screen\\obj\\",
+      "outputPath": "C:\\Users\\stive\\RiderProjects\\Washing_Dyeing\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\stive\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -3448,6 +3506,10 @@
           "CommunityToolkit.Mvvm": {
             "target": "Package",
             "version": "[8.4.1, )"
+          },
+          "MessageBox.Avalonia": {
+            "target": "Package",
+            "version": "[3.3.1.1, )"
           },
           "Microsoft.Extensions.DependencyInjection": {
             "target": "Package",

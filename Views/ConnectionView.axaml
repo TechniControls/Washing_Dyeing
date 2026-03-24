@@ -14,7 +14,7 @@
 
     <Grid>
         <Grid.RowDefinitions>80,Auto</Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,20,0,0">
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,50,0,0">
             <Grid>
                 <Grid.ColumnDefinitions>
                     600,400
@@ -25,16 +25,35 @@
                     Orientation="Horizontal"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center">
-                    <TextBlock
-                        Classes="readText"
-                        Margin="0,0,10,0"
-                        Text="Modbus Status:" />
-                    <Ellipse
-                        Classes="ellipse"
-                        Fill="Green"/>
-                    <TextBlock
-                        Classes="indicateText"
-                        Text="Connected"/>
+                    <!-- Card Modbus Connection -->
+                    <Border Classes="card" Height="100">
+                        <StackPanel>
+                            <TextBlock HorizontalAlignment="Center">
+                                <PathIcon Data="{StaticResource PlugConnect}" />
+                                <Label Content="Modbus RTU" />
+                            </TextBlock>
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,0" HorizontalAlignment="Center">
+                                <Label
+                                    Classes="readText"
+                                    Margin="0,0,10,0"
+                                    Content="Status:" />
+                                <Ellipse
+                                    Classes="ellipse"
+                                    Fill="{Binding ConnectionRtuStatusColor}" />
+                                <TextBlock
+                                    Classes="indicateText"
+                                    Text="{Binding ConnectionRtuState}" />
+                            </StackPanel>
+                            <TextBlock Margin="0,5,0,0" HorizontalAlignment="Center">
+                                <Run Text="Port:" />
+                                <Run Text="{Binding SelectedComPort}" />
+                                <Run Text="{Binding SelectedBaudRate}" />
+                                <Run Text="{Binding SelectedDataBits}" />
+                                <Run Text="{Binding SelectedParity}" />
+                                <Run Text="{Binding SelectedStopBits}" />
+                            </TextBlock>
+                        </StackPanel>
+                    </Border>
                 </StackPanel>
                 <!-- PLC Status -->
                 <StackPanel
@@ -42,68 +61,132 @@
                     Orientation="Horizontal"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center">
-                    <TextBlock
-                        Classes="readText"
-                        Margin="0,0,10,0"
-                        Text="PLC Status:" />
-                    <Ellipse
-                        Classes="ellipse"
-                        Fill="Green"/>
-                    <TextBlock 
-                        Classes="indicateText"
-                        Text="Running"/>
+
+                    <!-- Card PLC Connection -->
+                    <Border Classes="card" Height="100">
+                        <StackPanel>
+                            <TextBlock HorizontalAlignment="Center">
+                                <PathIcon Data="{StaticResource PlugConnect}" />
+                                <Label Content="PLC Connection" />
+                            </TextBlock>
+                            <StackPanel Orientation="Horizontal" Margin="0,5,0,0" HorizontalAlignment="Center">
+                                <Label
+                                    Classes="readText"
+                                    Margin="0,0,10,0"
+                                    Content="Status:" />
+                                <Ellipse
+                                    Classes="ellipse"
+                                    Fill="{Binding PlcStatusColor}" />
+                                <TextBlock
+                                    Classes="indicateText"
+                                    Text="{Binding PlcStatus}" />
+                            </StackPanel>
+                            <TextBlock Margin="0,5,0,0" HorizontalAlignment="Center" Text="Delta DVP SA2" />
+                        </StackPanel>
+
+                    </Border>
                 </StackPanel>
             </Grid>
         </StackPanel>
-        
+
         <!-- Connection Parameters -->
-        <StackPanel 
+        <StackPanel
             Grid.Row="1"
             Orientation="Vertical"
             VerticalAlignment="Center"
             HorizontalAlignment="Center"
-            Margin="0,50,0,0">
-            <!-- Serial Ports-->
-            <ComboBox Classes="comboSettings"
-                      PlaceholderText="ComPort"
-                      ItemsSource="{Binding PortNames}"
-                      SelectedItem="{Binding SelectedComPort}" />
-            <!-- BaudRate -->
-            <ComboBox Classes="comboSettings"
-                      PlaceholderText="BaudRate"
-                      ItemsSource="{Binding BaudRate}"
-                      SelectedItem="{Binding SelectedBaudRate}" />
-            <!-- Parity -->
-            <ComboBox Classes="comboSettings"
-                      PlaceholderText="Parity"
-                      ItemsSource="{Binding Parity}"
-                      SelectedItem="{Binding SelectedParity}" />
-            <!-- DataBits -->
-            <ComboBox Classes="comboSettings"
-                      PlaceholderText="DataBits"
-                      ItemsSource="{Binding DataBits}"
-                      SelectedItem="{Binding SelectedDataBits}" />
-            <!-- StopBits -->
-            <ComboBox Classes="comboSettings"
-                      PlaceholderText="StopBits"
-                      ItemsSource="{Binding StopBits}"
-                      SelectedItem="{Binding SelectedStopBits}" />
-            <Button Classes="connectionButton"
-                    Width="270"
-                    Content="Update Ports"
-                    Command="{Binding UpdatePortsCommand}" />
-            <!-- Buttons -->
-            <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
-                <Button Classes="connectionButton"
-                        Width="130"
-                        Margin="0,0,10,0"
-                        Content="Connect"
-                        Command="{Binding ConnectSerialPortCommand}" />
-                <Button Classes="connectionButton"
-                        Width="130"
-                        Content="Disconnect"
-                        Command="{Binding DisconnectSerialPortCommand}"/>
-            </StackPanel>
+            Margin="0,80,0,0">
+            <Grid>
+                <Grid.RowDefinitions>Auto,Auto,Auto</Grid.RowDefinitions>
+                <StackPanel Grid.Row="0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>150,250</Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>Auto,Auto,Auto,Auto,Auto,Auto,Auto</Grid.RowDefinitions>
+                        <!-- Serial Ports-->
+                        <Label Grid.Column="0" Grid.Row="0"
+                               Margin="0,5,10,0"
+                               Content="COM Port" />
+                        <ComboBox Grid.Column="1" Grid.Row="0" Classes="comboSettings"
+                                  PlaceholderText="ComPort"
+                                  ItemsSource="{Binding PortNames}"
+                                  SelectedItem="{Binding SelectedComPort}" />
+
+                        <!-- BaudRate -->
+                        <Label Grid.Column="0" Grid.Row="1"
+                               Margin="0,5,10,0"
+                               Content="Baud Rate" />
+                        <ComboBox Grid.Row="1" Grid.Column="1" Classes="comboSettings"
+                                  PlaceholderText="BaudRate"
+                                  ItemsSource="{Binding BaudRate}"
+                                  SelectedItem="{Binding SelectedBaudRate}" />
+
+                        <!-- Parity -->
+                        <Label Grid.Column="0" Grid.Row="2"
+                               Margin="0,5,10,0"
+                               Content="Parity" />
+                        <ComboBox Grid.Column="1" Grid.Row="2" Classes="comboSettings"
+                                  PlaceholderText="Parity"
+                                  ItemsSource="{Binding Parity}"
+                                  SelectedItem="{Binding SelectedParity}" />
+
+                        <!-- DataBits -->
+                        <Label Grid.Column="0" Grid.Row="3"
+                               Margin="0,5,10,0"
+                               Content="Data Bits" />
+                        <ComboBox Grid.Column="1" Grid.Row="3" Classes="comboSettings"
+                                  PlaceholderText="DataBits"
+                                  ItemsSource="{Binding DataBits}"
+                                  SelectedItem="{Binding SelectedDataBits}" />
+
+                        <!-- StopBits -->
+                        <Label Grid.Column="0" Grid.Row="4"
+                               Margin="0,5,10,0"
+                               Content="Stop Bits" />
+                        <ComboBox Grid.Column="1" Grid.Row="4" Classes="comboSettings"
+                                  PlaceholderText="StopBits"
+                                  ItemsSource="{Binding StopBits}"
+                                  SelectedItem="{Binding SelectedStopBits}" />
+                    </Grid>
+                </StackPanel>
+                <Button Grid.Row="1" Classes="connectionButton"
+                        HorizontalAlignment="Stretch"
+                        Width="250"
+                        Command="{Binding UpdatePortsCommand}">
+                    <StackPanel Orientation="Horizontal" Spacing="5">
+                        <PathIcon Data="{StaticResource Refresh}" />
+                        <Label Content="Update Ports" />
+                    </StackPanel>
+                </Button>
+
+                <!-- Buttons -->
+                <StackPanel Grid.Row="2"
+                            Orientation="Horizontal"
+                            Margin="0,15,0,0"
+                            HorizontalAlignment="Stretch"
+                            Spacing="15">
+                    <!-- Connect Button -->
+                    <Button Classes="connectionButton"
+                            HorizontalAlignment="Left"
+                            Width="200"
+                            Margin="0,0,10,0"
+                            Command="{Binding ConnectSerialPortCommand}">
+                        <StackPanel Orientation="Horizontal" Spacing="5">
+                            <PathIcon Data="{StaticResource PlugConnect}" />
+                            <Label Content="Connect" />
+                        </StackPanel>
+                    </Button>
+                    <!-- Disconnect Button -->
+                    <Button Classes="connectionButton"
+                            Width="200"
+                            HorizontalAlignment="Right"
+                            Command="{Binding DisconnectSerialPortCommand}" >
+                        <StackPanel Orientation="Horizontal" Spacing="5">
+                            <PathIcon Data="{StaticResource PlugConnect}" />
+                            <Label Content="Disconnect" />
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+            </Grid>
         </StackPanel>
     </Grid>
 </UserControl>

@@ -2,12 +2,7 @@
 
 public class AlarmModel
 {
-    public string AlarmName { get; set; }
-    public string AlarmDescription { get; set; }
-    
-    public AlarmModel(string alarmName, string alarmDescription)
-    {
-        AlarmName = alarmName;
-        AlarmDescription = alarmDescription;
-    }
+    public int AlarmId { get; set; } = 0;
+    public string AlarmName { get; set; } = string.Empty;
+    public string AlarmDescription { get; set; }  = string.Empty;
 }

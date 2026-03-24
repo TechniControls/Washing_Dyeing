@@ -164,7 +164,7 @@
                         <!-- Frequency Value -->
                         <TextBox
                             Grid.Row="5"
-                            Watermark="Frequency Setpoint"
+                            Watermark="Frequency Setpoint (Hz)"
                             HorizontalContentAlignment="Center"
                             Height="35"
                             Margin="0,0,0,10" />
@@ -174,7 +174,7 @@
                             Grid.Row="6"
                             Classes="primaryButton"
                             HorizontalAlignment="Stretch"
-                            Content="Write Frequency" />
+                            Content="Apply Frequency" />
 
                         <!-- Control Buttons -->
                         <StackPanel
@@ -306,7 +306,7 @@
                         <!-- Temperature Value -->
                         <TextBox
                             Grid.Row="5"
-                            Watermark="Temperature Setpoint"
+                            Watermark="Temperature Setpoint (°C)"
                             HorizontalContentAlignment="Center"
                             Height="35"
                             Margin="0,0,0,10" />
@@ -316,7 +316,7 @@
                             Grid.Row="6"
                             Classes="primaryButton"
                             HorizontalAlignment="Stretch"
-                            Content="Set Temperature" />
+                            Content="Apply Temperature" />
 
                         <!-- Control Buttons -->
                         <StackPanel
@@ -390,41 +390,49 @@
                                            Text="Filling Valve 100:"
                                            HorizontalAlignment="Left" />
 
-                                <TextBlock
-                                    Grid.Row="0"
-                                    Grid.Column="1"
-                                    Classes="indicateText"
-                                    Foreground="Green"
-                                    Text="Open"
-                                    HorizontalAlignment="Right" />
+                                <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" Spacing="16" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                    <Ellipse Classes="ellipse" Fill="Green"  />
+                                    <TextBlock
+                                        Classes="indicateText"
+                                        Foreground="Green"
+                                        Text="Open"
+                                        HorizontalAlignment="Right" />
+                                </StackPanel>
+                                
 
                                 <!-- Valve 101 -->
                                 <TextBlock Grid.Column="0" Grid.Row="1"
                                            Classes="valve"
                                            Text="Filling Valve 101:"
                                            HorizontalAlignment="Left" />
+                                
+                                <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" Spacing="5" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                    <Ellipse Classes="ellipse" Fill="Green"  />
+                                    <TextBlock
+                                        Classes="indicateText"
+                                        Foreground="Orange"
+                                        Text="Closed"
+                                        HorizontalAlignment="Right" />
+                                </StackPanel>
 
-                                <TextBlock
-                                    Grid.Row="1"
-                                    Grid.Column="1"
-                                    Classes="indicateText"
-                                    Foreground="Orange"
-                                    Text="Closed"
-                                    HorizontalAlignment="Right" />
+                               
 
                                 <!-- Valve 102 -->
                                 <TextBlock Grid.Column="0" Grid.Row="2"
                                            Classes="valve"
                                            Text="Filling Valve 102:"
                                            HorizontalAlignment="Left" />
+                                
+                                <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Spacing="5" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                    <Ellipse Classes="ellipse" Fill="Green"  />
+                                    <TextBlock
+                                        Classes="indicateText"
+                                        Foreground="Orange"
+                                        Text="Closed"
+                                        HorizontalAlignment="Right" />
+                                </StackPanel>
 
-                                <TextBlock
-                                    Grid.Row="2"
-                                    Grid.Column="1"
-                                    Classes="indicateText"
-                                    Foreground="Orange"
-                                    Text="Closed"
-                                    HorizontalAlignment="Right" />
+                               
 
                                 <!-- Filling Valves -->
                                 <!-- Valve 103 -->
@@ -432,28 +440,32 @@
                                            Classes="valve"
                                            Text="Cooling Valve 103:"
                                            HorizontalAlignment="Left" />
+                                
+                                <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" Spacing="5" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                    <Ellipse Classes="ellipse" Fill="Green"  />
+                                    <TextBlock
+                                        Classes="indicateText"
+                                        Foreground="Orange"
+                                        Text="Closed"
+                                        HorizontalAlignment="Right" />
+                                </StackPanel>
 
-                                <TextBlock
-                                    Grid.Row="3"
-                                    Grid.Column="1"
-                                    Classes="indicateText"
-                                    Foreground="Orange"
-                                    Text="Closed"
-                                    HorizontalAlignment="Right" />
+                                
 
                                 <!-- Valve 104 -->
                                 <TextBlock Grid.Column="0" Grid.Row="4"
                                            Classes="valve"
                                            Text="Cooling Valve 104:"
                                            HorizontalAlignment="Left" />
-
-                                <TextBlock
-                                    Grid.Row="4"
-                                    Grid.Column="1"
-                                    Classes="indicateText"
-                                    Foreground="Orange"
-                                    Text="Closed"
-                                    HorizontalAlignment="Right" />
+                                
+                                <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal" Spacing="5" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                    <Ellipse Classes="ellipse" Fill="Green"  />
+                                    <TextBlock
+                                        Classes="indicateText"
+                                        Foreground="Orange"
+                                        Text="Closed"
+                                        HorizontalAlignment="Right" />
+                                </StackPanel>
 
                                 <!-- Valve 105 -->
                                 <TextBlock Grid.Column="0" Grid.Row="5"
@@ -461,13 +473,14 @@
                                            Text="Cooling Valve 105:"
                                            HorizontalAlignment="Left" />
 
-                                <TextBlock
-                                    Grid.Row="5"
-                                    Grid.Column="1"
-                                    Classes="indicateText"
-                                    Foreground="Orange"
-                                    Text="Closed"
-                                    HorizontalAlignment="Right" />
+                                <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal" Spacing="5" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                    <Ellipse Classes="ellipse" Fill="Green"  />
+                                    <TextBlock
+                                        Classes="indicateText"
+                                        Foreground="Orange"
+                                        Text="Closed"
+                                        HorizontalAlignment="Right" />
+                                </StackPanel>
 
                                 <!-- Cooling Valves -->
                                 <!-- Valve 106 -->
@@ -476,13 +489,14 @@
                                            Text="Discharge Valve 106:"
                                            HorizontalAlignment="Left" />
 
-                                <TextBlock
-                                    Grid.Row="6"
-                                    Grid.Column="1"
-                                    Classes="indicateText"
-                                    Foreground="Orange"
-                                    Text="Closed"
-                                    HorizontalAlignment="Right" />
+                                <StackPanel Grid.Row="6" Grid.Column="1" Orientation="Horizontal" Spacing="5" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                    <Ellipse Classes="ellipse" Fill="Green"  />
+                                    <TextBlock
+                                        Classes="indicateText"
+                                        Foreground="Orange"
+                                        Text="Closed"
+                                        HorizontalAlignment="Right" />
+                                </StackPanel>
 
                                 <!-- Valve 107 -->
                                 <TextBlock Grid.Column="0" Grid.Row="7"
@@ -490,13 +504,14 @@
                                            Text="Discharge Valve 107:"
                                            HorizontalAlignment="Left" />
 
-                                <TextBlock
-                                    Grid.Row="7"
-                                    Grid.Column="1"
-                                    Classes="indicateText"
-                                    Foreground="Orange"
-                                    Text="Closed"
-                                    HorizontalAlignment="Right" />
+                                <StackPanel Grid.Row="7" Grid.Column="1" Orientation="Horizontal" Spacing="5" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                    <Ellipse Classes="ellipse" Fill="Green"  />
+                                    <TextBlock
+                                        Classes="indicateText"
+                                        Foreground="Orange"
+                                        Text="Closed"
+                                        HorizontalAlignment="Right" />
+                                </StackPanel>
 
                                 <!-- Valve 108 -->
                                 <TextBlock Grid.Column="0" Grid.Row="8"
@@ -504,13 +519,14 @@
                                            Text="Discharge Valve 108:"
                                            HorizontalAlignment="Left" />
 
-                                <TextBlock
-                                    Grid.Row="8"
-                                    Grid.Column="1"
-                                    Classes="indicateText"
-                                    Foreground="Orange"
-                                    Text="Closed"
-                                    HorizontalAlignment="Right" />
+                                <StackPanel Grid.Row="8" Grid.Column="1" Orientation="Horizontal" Spacing="5" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                    <Ellipse Classes="ellipse" Fill="Green"  />
+                                    <TextBlock
+                                        Classes="indicateText"
+                                        Foreground="Orange"
+                                        Text="Closed"
+                                        HorizontalAlignment="Right" />
+                                </StackPanel>
                             </Grid>
                         </StackPanel>
                     </Grid>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\stive\\RiderProjects\\Barca_Dyeing_Screen\\Barca_Dyeing_Screen.csproj": {}
+    "C:\\Users\\stive\\RiderProjects\\Washing_Dyeing\\Barca_Dyeing_Screen.csproj": {}
   },
   "projects": {
-    "C:\\Users\\stive\\RiderProjects\\Barca_Dyeing_Screen\\Barca_Dyeing_Screen.csproj": {
+    "C:\\Users\\stive\\RiderProjects\\Washing_Dyeing\\Barca_Dyeing_Screen.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\stive\\RiderProjects\\Barca_Dyeing_Screen\\Barca_Dyeing_Screen.csproj",
+        "projectUniqueName": "C:\\Users\\stive\\RiderProjects\\Washing_Dyeing\\Barca_Dyeing_Screen.csproj",
         "projectName": "Barca_Dyeing_Screen",
-        "projectPath": "C:\\Users\\stive\\RiderProjects\\Barca_Dyeing_Screen\\Barca_Dyeing_Screen.csproj",
+        "projectPath": "C:\\Users\\stive\\RiderProjects\\Washing_Dyeing\\Barca_Dyeing_Screen.csproj",
         "packagesPath": "C:\\Users\\stive\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\stive\\RiderProjects\\Barca_Dyeing_Screen\\obj\\",
+        "outputPath": "C:\\Users\\stive\\RiderProjects\\Washing_Dyeing\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\stive\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -75,6 +75,10 @@
             "CommunityToolkit.Mvvm": {
               "target": "Package",
               "version": "[8.4.1, )"
+            },
+            "MessageBox.Avalonia": {
+              "target": "Package",
+              "version": "[3.3.1.1, )"
             },
             "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",

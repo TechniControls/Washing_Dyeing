@@ -1,35 +1,36 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace Barca_Dyeing_Screen.Models;
 
 public partial class SerialPortModel : ObservableObject
 {
-    [ObservableProperty] private List<string> _portNames = new();
+    [ObservableProperty] private ObservableCollection<string> _portNames = [];
 
-    [ObservableProperty] private List<string> _baudRate = new()
-    {
+    [ObservableProperty] private ObservableCollection<string> _baudRate =
+    [
         "9600",
         "19200",
         "115200"
-    };
+    ];
 
-    [ObservableProperty] private List<string> _parity = new()
-    {
+    [ObservableProperty] private ObservableCollection<string> _parity =
+    [
         "Odd",
         "Even",
         "None"
-    };
+    ];
 
-    [ObservableProperty] private List<string> _dataLength = new()
-    {
+    [ObservableProperty] private ObservableCollection<string> _dataLength =
+    [
         "7",
         "8"
-    };
+    ];
 
-    [ObservableProperty] private List<string> _stopBits = new()
-    {
+    [ObservableProperty] private ObservableCollection<string> _stopBits =
+    [
         "1",
         "2"
-    };
+    ];
 }

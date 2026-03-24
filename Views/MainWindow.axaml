@@ -57,7 +57,7 @@
                     <Button Classes="nav"
                             Command="{Binding NavigateToSettingsViewCommand}">
                         <StackPanel Orientation="Horizontal">
-                            <PathIcon Data="{StaticResource settings}"
+                            <PathIcon Data="{StaticResource Settings}"
                                       Classes="pathNav" />
                             <TextBlock Text="Settings" />
                         </StackPanel>
@@ -68,7 +68,7 @@
                             Command="{Binding NavigateToAlarmsViewCommand}">
                         <StackPanel Orientation="Horizontal" Spacing="9">
                             <gif:GifImage  Source="avares://Barca_Dyeing_Screen/Assets/Images/alarm.gif" Width="25" Height="25"/>
-                            <TextBlock Text="Alarms" />
+                            <TextBlock Text="Alarms" VerticalAlignment="Center" />
                         </StackPanel>
                     </Button>
                 </StackPanel>

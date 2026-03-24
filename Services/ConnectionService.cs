@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO.Ports;
 using System.Threading.Tasks;
 using Barca_Dyeing_Screen.Stores;
 using CommunityToolkit.Mvvm.ComponentModel;
 using Modbus.Device;
 using Modbus.Serial;
+using MsBox.Avalonia;
 
 namespace Barca_Dyeing_Screen.Services;
 
@@ -13,12 +15,12 @@ public class ConnectionService(ConnectionStore connectionStore) : ObservableObje
 {
     private readonly ConnectionStore _connectionStore = connectionStore;
 
-    private SerialPort? _serialPort; // COM4
-    private IModbusSerialMaster? _master;
+    private SerialPort? _serialPort;
+    public IModbusSerialMaster? Master;
 
     private const int TimeOut = 2000;
 
-    public void ConnectModbusRtu(
+    public async Task ConnectModbusRtu(
         string comPort,
         string baudRate,
         string parity,
@@ -56,18 +58,21 @@ public class ConnectionService(ConnectionStore connectionStore) : ObservableObje
             };
 
             // Open Port
+            _serialPort.Open();
 
             // Create RTU
             var adapter = new SerialPortAdapter(_serialPort);
-            _master = ModbusSerialMaster.CreateRtu(adapter);
+            Master = ModbusSerialMaster.CreateRtu(adapter);
 
 
-            _connectionStore.IsConnected = _serialPort.IsOpen ? true : false;
+            _connectionStore.IsConnected = _serialPort.IsOpen;
         }
         catch (Exception e)
         {
-            Console.WriteLine(e);
-            throw;
+            var messageBox = MessageBoxManager.GetMessageBoxStandard(
+                "Connection Error",
+                $"Connection error during establishment {e}");
+            await messageBox.ShowAsync();
         }
     }
 
@@ -75,10 +80,12 @@ public class ConnectionService(ConnectionStore connectionStore) : ObservableObje
     public void DisconnectModbusRtu()
     {
         _serialPort?.Close();
+        _connectionStore.IsConnected = _serialPort!.IsOpen;
         _serialPort = null;
+        
     }
 
-    public void GetSerialPorts(List<string> ports)
+    public void GetSerialPorts(ObservableCollection<string> ports)
     {
         var localPorts = SerialPort.GetPortNames();
         foreach (var port in localPorts)
